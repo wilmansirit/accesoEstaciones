@@ -1,22 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Acceso } from '../Acceso';
-import { ACCESOS } from '../mock-accesos';
+
 import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccesoService {
 
-  constructor() { }
+  private accesosUrl = 'api/accesos'; // URL to web api
+
+  constructor(
+    private http: HttpClient) { }
 
   getAccesos(): Observable<Acceso[]> {
-    return of(ACCESOS);
+    return this.http.get<Acceso[]>( this.accesosUrl );
   }
 
   getAcceso(id: number): Observable<Acceso> {
-    return of(ACCESOS[ id ]);
+    const url = `${this.accesosUrl}/${id}`;
+    return this.http.get<Acceso>(url);
   }
 
 }
-

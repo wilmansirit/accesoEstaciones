@@ -13,8 +13,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="puntero" *ngFor="let acceso of accesos; let id = index" 
-                            routerLink="/detail/{{ id }}">
+        <tr class="puntero" *ngFor="let acceso of accesos" 
+                            routerLink="/detail/{{ acceso.id }}">
           <th scope="row">{{ acceso.numSolicitud }}</th>
           <td>{{ acceso.fechasSolicitud.desde }}</td>
           <td>{{ acceso.idEstacion }}</td>
