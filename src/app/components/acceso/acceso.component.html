@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="table-responsive-sm">
+
+    <table class="table table-hover table-sm">
+      <thead>
+        <tr>
+          <th scope="col">No. Acceso</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">ID Estacion</th>
+          <th scope="col">Estacion</th>
+          <th scope="col">Nombre del Solicitante</th>
+          <th scope="col">Aprobador</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="puntero" *ngFor="let acceso of accesos; let id = index" 
+                            routerLink="/detail/{{ id }}">
+          <th scope="row">{{ acceso.numSolicitud }}</th>
+          <td>{{ acceso.fechasSolicitud.desde }}</td>
+          <td>{{ acceso.idEstacion }}</td>
+          <td>{{ acceso.nombreEstacion }}</td>
+          <td>{{ acceso.nombresApelidosSolicitante }}</td>
+          <td>{{ acceso.aprobador }}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+</div>
+
+<hr class="my-4">
