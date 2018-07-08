@@ -14,9 +14,9 @@ export class Acceso {
     nombresApellidosResponsable: string;
     cedulaResponsable: string;
     vehiculo: {
-        marca: string; 
-        modelo: string; 
-        color: string; 
+        marca: string;
+        modelo: string;
+        color: string;
         placas: string;
     };
     aprobador: string;

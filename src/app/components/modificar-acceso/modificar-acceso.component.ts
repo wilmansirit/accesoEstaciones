@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { Acceso } from '../../Acceso';
 import { AccesoService } from '../../services/acceso.service';
@@ -16,14 +17,19 @@ export class ModificarAccesoComponent implements OnInit {
 
   constructor(
     private accesoService: AccesoService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
   ) { }
 
   ngOnInit() {
     this.getAcceso();
   }
 
-  getAcceso(): void{
+  goBack(): void {
+    this.location.back();
+  }
+
+  getAcceso(): void {
 
     const id = +this.route.snapshot.paramMap.get('id'); // El signo + para convertir la cadena encontrada en número
     this.accesoService.getAcceso( id )
