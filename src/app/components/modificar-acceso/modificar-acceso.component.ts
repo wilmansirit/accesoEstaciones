@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 
 import { Acceso } from '../../Acceso';
 import { AccesoService } from '../../services/acceso.service';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -11,11 +12,37 @@ import { AccesoService } from '../../services/acceso.service';
   templateUrl: './modificar-acceso.component.html',
   styleUrls: ['./modificar-acceso.component.css']
 })
+
 export class ModificarAccesoComponent implements OnInit {
 
-  @Input() acceso: Acceso;
+  acceso: Acceso = {
+      id: '',
+      fechaCreacion: '',
+      numSolicitud: '',
+      idEstacion: '',
+      nombreEstacion: '',
+      nombresApellidosSolicitante: '',
+      cedulaSolicitante: '',
+      fechasSolicitud: {
+          desde: '',
+          hasta: '',
+        },
+        nombresApellidosResponsable: '',
+        cedulaResponsable: '',
+        vehiculo: {
+            marca: '',
+            modelo: '',
+            color: '',
+            placas: '',
+          },
+          aprobador: '',
+          codigoAprobado: '',
+          aprobacion: false,
+        };
 
-  constructor(
+    // acceso = new Acceso();
+
+        constructor(
     private accesoService: AccesoService,
     private route: ActivatedRoute,
     private location: Location
@@ -32,8 +59,17 @@ export class ModificarAccesoComponent implements OnInit {
   getAcceso(): void {
 
     const id = +this.route.snapshot.paramMap.get('id'); // El signo + para convertir la cadena encontrada en número
-    this.accesoService.getAcceso( id )
-                .subscribe(acceso => this.acceso = acceso);
+    this.accesoService.getData(id)
+      .subscribe(acceso => this.acceso = acceso);
   }
+
+  updateAcceso(f: NgForm) {
+
+    this.accesoService.updateData( this.acceso )
+      .subscribe(() => {
+        this.goBack();
+      });
+  }
+
 }
 

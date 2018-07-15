@@ -1,0 +1,113 @@
+<div class="container">
+
+  <div class="jumbotron">
+    <form #formCrear="ngForm" (ngSubmit)="crearAcceso(formCrear)">
+
+      <input type="text" name="id" hidden [(ngModel)]="acceso.id">
+
+      <div class="form-row">
+        <div class="col-sm-2 text-center">
+          <label for="fechaCreacion">Fecha</label>
+          <input type="text" class="form-control form-control-sm text-center" name="fechaCreacion" [(ngModel)]="acceso.fechaCreacion"
+          required>
+        </div>
+        <div class="col-sm-2 text-center">
+          <label for="numSolicitud">No. Solicitud</label>
+          <input type="text" class="form-control form-control-sm text-center" name="numSolicitud" [(ngModel)]="acceso.numSolicitud"
+          required>
+        </div>
+        <div class="col-sm-8 text-right">
+          <span class="badge badge-pill badge-secondary">Id: {{ acceso.id }}</span>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-sm-2 text-center">
+          <label for="idEstacion">Id. Estacion</label>
+          <input type="text" class="form-control form-control-sm text-center" name="idEstacion" [(ngModel)]="acceso.idEstacion" required>
+        </div>
+        <div class="col-sm-10 text-center">
+          <label for="nombreEstacion">Nombre Estacion</label>
+          <input type="text" class="form-control form-control-sm text-center" name="nombreEstacion" [(ngModel)]="acceso.nombreEstacion"
+            required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-sm-4 text-center">
+          <label for="nombresApellidosSolicitante">Nombres del Solicitante</label>
+          <input type="text" class="form-control form-control-sm text-center" name="nombresApellidosSolicitante" [(ngModel)]="acceso.nombresApellidosSolicitante"
+            required>
+        </div>
+        <div class="col-sm-2 text-center">
+          <label for="cedulaSolicitante">Cedula</label>
+          <input type="text" class="form-control form-control-sm text-center" name="cedulaSolicitante" [(ngModel)]="acceso.cedulaSolicitante"
+            required>
+        </div>
+        <div class="col-sm-4 text-center">
+          <label for="nombresApellidosResponsable">Nombres del Responsable</label>
+          <input type="text" class="form-control form-control-sm text-center" name="nombresApellidosResponsable" [(ngModel)]="acceso.nombresApellidosResponsable"
+            required>
+        </div>
+        <div class="col-sm-2 text-center">
+          <label for="cedulaResponsable">Cedula</label>
+          <input type="text" class="form-control form-control-sm text-center" name="cedulaResponsable" [(ngModel)]="acceso.cedulaResponsable"
+            required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-sm-2 text-center">
+          <label for="fechasSolicitudDesde">Fecha Desde</label>
+          <input type="text" class="form-control form-control-sm text-center" name="fechasSolicitud.desde" [(ngModel)]="acceso.fechasSolicitud.desde"
+            required>
+        </div>
+        <div class="col-sm-2 text-center">
+          <label for="fechasSolicitudHasta">Fecha Hasta</label>
+          <input type="text" class="form-control form-control-sm text-center" name="fechasSolicitud.hasta" [(ngModel)]="acceso.fechasSolicitud.hasta"
+            required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-sm-3 text-center">
+          <label for="vehiculoMarca">Marca Vehiculo</label>
+          <input type="text" class="form-control form-control-sm text-center" name="vehiculo.marca" [(ngModel)]="acceso.vehiculo.marca"
+            required>
+        </div>
+        <div class="col-sm-3 text-center">
+          <label for="vehiculoModelo">Modelo</label>
+          <input type="text" class="form-control form-control-sm text-center" name="vehiculo.modelo" [(ngModel)]="acceso.vehiculo.modelo"
+            required>
+        </div>
+        <div class="col-sm-3 text-center">
+          <label for="vehiculoColor">Color</label>
+          <input type="text" class="form-control form-control-sm text-center" name="vehiculo.color" [(ngModel)]="acceso.vehiculo.color"
+            required>
+        </div>
+        <div class="col-sm-3 text-center">
+          <label for="vehiculoPlacas">Placas</label>
+          <input type="text" class="form-control form-control-sm text-center" name="vehiculo.placas" [(ngModel)]="acceso.vehiculo.placas"
+            required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-sm-3 text-center">
+          <label for="aprobador">Aprobado por</label>
+          <input type="text" class="form-control form-control-sm text-center" name="aprobador" [(ngModel)]="acceso.aprobador" required>
+        </div>
+        <div class="col-sm-2 text-center">
+          <label for="codigoAprobador">Código</label>
+          <input type="text" class="form-control form-control-sm text-center" name="codigoAprobador" [(ngModel)]="acceso.codigoAprobador"
+            required>
+        </div>
+      </div>
+
+      <hr class="my-4">
+
+      <button type="submit" class="btn btn-primary float-right" [disabled]="!formCrear.form.valid" >Crear Acceso</button>
+
+    </form>
+  </div>
+
+</div>

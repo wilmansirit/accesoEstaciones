@@ -5,11 +5,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AccesoComponent } from './components/acceso/acceso.component';
 import { ModificarAccesoComponent } from './components/modificar-acceso/modificar-acceso.component';
+import { CrearAccesoComponent } from './components/crear-acceso/crear-acceso.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/accesos', pathMatch: 'full'},
-  { path: 'accesos', component: AccesoComponent },
-  { path: 'detail/:id', component: ModificarAccesoComponent }
+  { path: '', redirectTo: '/all', pathMatch: 'full'},
+  { path: 'all', component: AccesoComponent },
+  { path: 'detail/:id', component: ModificarAccesoComponent },
+  { path: 'add', component: CrearAccesoComponent }
 ]
 
 @NgModule({

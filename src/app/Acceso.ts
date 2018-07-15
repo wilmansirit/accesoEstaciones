@@ -1,11 +1,11 @@
 
 export class Acceso {
-
+    id: number;
     fechaCreacion: string;
     numSolicitud: string;
     idEstacion: string;
     nombreEstacion: string;
-    nombresApelidosSolicitante: string;
+    nombresApellidosSolicitante: string;
     cedulaSolicitante: string;
     fechasSolicitud: {
         desde: string;

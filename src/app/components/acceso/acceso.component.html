@@ -1,4 +1,13 @@
 <div class="container">
+
+  <div class="row">
+    <a class="btn btn-primary" routerLink='/add'>Crear nuevo Acceso</a>
+  </div>
+
+</div>
+
+<div class="container mt-4">
+
   <div class="table-responsive-sm">
 
     <table class="table table-hover table-sm">
@@ -13,19 +22,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="puntero" *ngFor="let acceso of accesos" 
-                            routerLink="/detail/{{ acceso.id }}">
+        <tr class="puntero" *ngFor="let acceso of accesos" routerLink="/detail/{{ acceso.id }}">
           <th scope="row">{{ acceso.numSolicitud }}</th>
-          <td>{{ acceso.fechasSolicitud.desde }}</td>
+          <td>{{ acceso.fechaCreacion }}</td>
           <td>{{ acceso.idEstacion }}</td>
           <td>{{ acceso.nombreEstacion }}</td>
-          <td>{{ acceso.nombresApelidosSolicitante }}</td>
+          <td>{{ acceso.nombresApellidosSolicitante }}</td>
           <td>{{ acceso.aprobador }}</td>
         </tr>
       </tbody>
     </table>
-    
+
   </div>
 </div>
-
-<hr class="my-4">

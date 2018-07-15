@@ -18,12 +18,10 @@ export class AccesoComponent implements OnInit {
   ngOnInit() {
     // Llamando a la lista de accesos desde el Servicio
     this.getAccesos();
-
   }
 
   getAccesos(): void {
-    this.accesoService.getAccesos()
+    this.accesoService.getAllData()
         .subscribe(accesos => this.accesos = accesos);
   }
-
 }

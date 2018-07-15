@@ -5,15 +5,15 @@ export class InMemoryDataService implements InMemoryDbService {
         const accesos = [
             {
                 id: 1,
-                fechaCreacion: '07/06/2018',
+                fechaCreacion: '17/03/2018',
                 numSolicitud: '458721546',
                 idEstacion: '17025',
                 nombreEstacion: 'MTSO Barquisimeto',
-                nombresApelidosSolicitante: 'Adrian Montes',
+                nombresApellidosSolicitante: 'Adrian Montes',
                 cedulaSolicitante: '9525657',
                 fechasSolicitud: {
                     desde: '21/07/2018',
-                    hasta: '22/072018',
+                    hasta: '22/07/2018',
                 },
                 nombresApellidosResponsable: 'Lermit Martinez',
                 cedulaResponsable: '12456789',
@@ -24,7 +24,7 @@ export class InMemoryDataService implements InMemoryDbService {
                     placas: 'AB500RK',
                 },
                 aprobador: 'Richmar Lizcano',
-                codigoAprobado: 'E10235',
+                codigoAprobador: 'E10235',
                 aprobacion: false
             },
             {
@@ -33,7 +33,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 numSolicitud: '456528297',
                 idEstacion: '10025',
                 nombreEstacion: 'Petare Sur',
-                nombresApelidosSolicitante: 'Sebastian Reyes',
+                nombresApellidosSolicitante: 'Sebastian Reyes',
                 cedulaSolicitante: '14568787',
                 fechasSolicitud: {
                     desde: '01/05/2018',
@@ -48,20 +48,20 @@ export class InMemoryDataService implements InMemoryDbService {
                     placas: 'IAZ255',
                 },
                 aprobador: 'Nedwin Mora',
-                codigoAprobado: 'E05265',
+                codigoAprobador: 'E05265',
                 aprobacion: false
             },
             {
                 id: 3,
-                fechaCreacion: '07/06/2018',
+                fechaCreacion: '08/02/2018',
                 numSolicitud: '458745681',
                 idEstacion: '15010',
                 nombreEstacion: 'Cerro Café',
-                nombresApelidosSolicitante: 'Carmen Iturbe',
+                nombresApellidosSolicitante: 'Carmen Iturbe',
                 cedulaSolicitante: '9525657',
                 fechasSolicitud: {
                     desde: '04/06/2018',
-                    hasta: '05/062018',
+                    hasta: '05/06/2018',
                 },
                 nombresApellidosResponsable: 'Lermit Martinez',
                 cedulaResponsable: '12456789',
@@ -72,20 +72,20 @@ export class InMemoryDataService implements InMemoryDbService {
                     placas: 'AB500RK',
                 },
                 aprobador: 'Arnaldo Darias',
-                codigoAprobado: 'E02565',
+                codigoAprobador: 'E02565',
                 aprobacion: false
             },
             {
                 id: 4,
-                fechaCreacion: '07/06/2018',
+                fechaCreacion: '27/10/2018',
                 numSolicitud: '589426570',
                 idEstacion: '11018',
                 nombreEstacion: 'Chaure',
-                nombresApelidosSolicitante: 'Nohemí J. Perez',
+                nombresApellidosSolicitante: 'Nohemí J. Perez',
                 cedulaSolicitante: '9525657',
                 fechasSolicitud: {
                     desde: '13/07/2018',
-                    hasta: '14/072018',
+                    hasta: '14/07/2018',
                 },
                 nombresApellidosResponsable: 'Lermit Martinez',
                 cedulaResponsable: '12456789',
@@ -96,7 +96,7 @@ export class InMemoryDataService implements InMemoryDbService {
                     placas: 'AB500RK',
                 },
                 aprobador: 'Andrés Rodriguez',
-                codigoAprobado: 'E10235',
+                codigoAprobador: 'E10235',
                 aprobacion: false
             },
         ];
