@@ -16,7 +16,7 @@ import { NgForm } from '@angular/forms';
 export class ModificarAccesoComponent implements OnInit {
 
   acceso: Acceso = {
-      id: '',
+      id: null,
       fechaCreacion: '',
       numSolicitud: '',
       idEstacion: '',

@@ -1,7 +1,11 @@
 <div class="container">
 
   <div class="row">
-    <a class="btn btn-primary" routerLink='/add'>Crear nuevo Acceso</a>
+    <div class="float-ms-right">
+      <a class="btn btn-primary" routerLink='/add'>Crear Acceso
+        <span class="fa fa-pencil"></span>
+      </a>
+    </div>
   </div>
 
 </div>
@@ -10,25 +14,40 @@
 
   <div class="table-responsive-sm">
 
-    <table class="table table-hover table-sm">
+    <table class="table table-hover table-sm text-center">
       <thead>
         <tr>
-          <th scope="col">No. Acceso</th>
+          <th scope="col"></th>
+          <th scope="col">Acceso</th>
           <th scope="col">Fecha</th>
           <th scope="col">ID Estacion</th>
-          <th scope="col">Estacion</th>
+          <th scope="col">Nombre Estacion</th>
           <th scope="col">Nombre del Solicitante</th>
           <th scope="col">Aprobador</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Borrar</th>
+          <th scope="col">Aprob.</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="puntero" *ngFor="let acceso of accesos" routerLink="/detail/{{ acceso.id }}">
-          <th scope="row">{{ acceso.numSolicitud }}</th>
+        <tr *ngFor="let acceso of accesos">
+          <th scope="row"><span class="badge badge-pill badge-info">{{ acceso.id }}</span></th>
+          <th>{{ acceso.numSolicitud }}</th>
           <td>{{ acceso.fechaCreacion }}</td>
           <td>{{ acceso.idEstacion }}</td>
           <td>{{ acceso.nombreEstacion }}</td>
           <td>{{ acceso.nombresApellidosSolicitante }}</td>
           <td>{{ acceso.aprobador }}</td>
+          <td><span class="fa fa-edit puntero" routerLink="/detail/{{ acceso.id }}"></span></td>
+          <td><span class="fa fa-trash-o puntero" (click)="deleteAcceso( acceso )"></span></td>
+          <td class="puntero" (click)="aprobarAcceso( acceso )">
+
+            <div *ngIf="acceso.aprobacion; else elseBlock"><span class="fa fa-check"></span></div>
+            <ng-template #elseBlock>
+              <span class="fa fa-flag-checkered"></span>
+            </ng-template>
+
+          </td>
         </tr>
       </tbody>
     </table>

@@ -25,7 +25,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 },
                 aprobador: 'Richmar Lizcano',
                 codigoAprobador: 'E10235',
-                aprobacion: false
+                aprobacion: true
             },
             {
                 id: 2,
@@ -73,7 +73,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 },
                 aprobador: 'Arnaldo Darias',
                 codigoAprobador: 'E02565',
-                aprobacion: false
+                aprobacion: true
             },
             {
                 id: 4,
